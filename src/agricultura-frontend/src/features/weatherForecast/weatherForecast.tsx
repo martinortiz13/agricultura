@@ -33,8 +33,13 @@ import API from './../../services/api';
     // });
   }, []);
 
+  
+  const url = process.env.REACT_APP_API_URL;
+
   return (
     <>
+  url: {url}
+    <div></div>
       <ul>
         {summaries.map((item) => (
           <li key={item.summary}>{item.summary}</li>
