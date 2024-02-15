@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgriculturaApi", "AgriculturaApi\AgriculturaApi.csproj", "{4E10CB22-7737-489F-AF57-5A246467626D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgriculturaApi.Tests", "AgriculturaApi.Tests\AgriculturaApi.Tests.csproj", "{DA693477-B9B5-46B2-8CDC-C644D9CCFC34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E10CB22-7737-489F-AF57-5A246467626D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E10CB22-7737-489F-AF57-5A246467626D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E10CB22-7737-489F-AF57-5A246467626D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E10CB22-7737-489F-AF57-5A246467626D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA693477-B9B5-46B2-8CDC-C644D9CCFC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA693477-B9B5-46B2-8CDC-C644D9CCFC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA693477-B9B5-46B2-8CDC-C644D9CCFC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA693477-B9B5-46B2-8CDC-C644D9CCFC34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
