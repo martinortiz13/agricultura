@@ -1,0 +1,46 @@
+*.swp
+*.*~
+*.cache
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
+Rio.Sarlaft.Servicios.assets.cache
+obj/project.assets.json
+obj/project.nuget.cache
+
+
+# Visual Studio Code
+.vscode
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.cache
+
+bin
+obj
+packages
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+obj/
+obj/Debug/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio 2015
+.vs/

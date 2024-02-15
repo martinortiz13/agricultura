@@ -1,0 +1,79 @@
+version: '3.9'
+services:
+  sql-server-express:
+    image: mcr.microsoft.com/mssql/server:latest
+    container_name: docker-sql-server-express
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=MyPassword1
+      - SA_PASSWORD=MyPassword1
+      - MSSQL_PID=Express
+    ports:
+      - "1434:1433"
+    volumes:
+      - sql-data:/var/opt/mssql
+    networks:
+     - svcnw
+
+  api:
+    image: agricultura-backend-api
+    container_name: agricultura-backend
+    deploy:
+      resources:
+        limits:
+          memory: 200M
+    build:
+      context: ./src/agricultura-backend/AgriculturaApi
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "5555:5555"
+    # extra_hosts:
+    #   sarlaft: 10.122.159.9
+    #   rio-sarlaft_db_1: 10.122.159.9
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:5555
+    # depends_on:
+    #   - core
+    #   - ftpd_server
+    networks:
+     - svcnw
+
+  ui:
+    image: agricultura-frontend
+    container_name: agricultura-frontend_1
+    deploy:
+      resources:
+        limits:
+          memory: 50M
+    build:
+      context: ./src/agricultura-frontend
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_API_URL=http://localhost:5555
+      # target: development
+    restart: always
+    ports:
+      - "8081:80"
+    volumes:
+      - ./src/agricultura-frontend:/app  # Mount these as volumes so we can watch them. 
+      - /src/app/node_modules  # I think this was so it didn't overwrite or copy or something...
+    env_file:
+      - ./src/agricultura-frontend/.env      
+    environment:
+      # - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_API_URL=http://localhost:5556
+    depends_on:
+     - api
+    networks:
+     - svcnw      
+
+networks:
+ svcnw:
+   driver: bridge
+
+volumes:
+  sql-data:
+
